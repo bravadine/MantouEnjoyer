@@ -1,0 +1,111 @@
+1685808702a:1:{s:16:"static.blade.php";a:12:{s:8:"fileName";s:16:"static.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:1497:"---
+description: Static layout for static pages
+
+'[session]':
+    security: all
+
+'[staticPage]':
+
+'[staticMenu mainMenu]':
+    code: main-menu
+
+'[staticMenu footerMenu]':
+    code: footer-menu
+
+'[staticMenu pagesSideMenu]':
+    code: pages-menu
+
+'[newsletter]': {  }
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ App::getLocale() }}" class="h-100">
+<head>
+    @partial('head')
+</head>
+<body class="d-flex flex-column h-100 {{ $this->page->bodyClass }}">
+
+    <header class="header">
+        @partial('header')
+    </header>
+
+    <main role="main">
+        <div id="page-wrapper">
+            <div class="container py-4">
+                <div id="heading" class="heading-section py-5">
+                    <h2>{{ $this->page->title }}</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        @partial('nav/pages_menu')
+                    </div>
+
+                    <div class="col-sm-9">
+                        <div class="card">
+                            <div class="card-body">
+                                @page
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto">
+        @partial('footer')
+    </footer>
+    <div id="notification">
+        @partial('flash')
+    </div>
+    @partial('eucookiebanner')
+    @partial('scripts')
+</body>
+</html>
+";s:6:"markup";s:1227:"
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ App::getLocale() }}" class="h-100">
+<head>
+    @partial('head')
+</head>
+<body class="d-flex flex-column h-100 {{ $this->page->bodyClass }}">
+
+    <header class="header">
+        @partial('header')
+    </header>
+
+    <main role="main">
+        <div id="page-wrapper">
+            <div class="container py-4">
+                <div id="heading" class="heading-section py-5">
+                    <h2>{{ $this->page->title }}</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        @partial('nav/pages_menu')
+                    </div>
+
+                    <div class="col-sm-9">
+                        <div class="card">
+                            <div class="card-body">
+                                @page
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto">
+        @partial('footer')
+    </footer>
+    <div id="notification">
+        @partial('flash')
+    </div>
+    @partial('eucookiebanner')
+    @partial('scripts')
+</body>
+</html>
+";s:4:"code";N;s:11:"description";s:30:"Static layout for static pages";s:9:"[session]";a:1:{s:8:"security";s:3:"all";}s:12:"[staticPage]";N;s:21:"[staticMenu mainMenu]";a:1:{s:4:"code";s:9:"main-menu";}s:23:"[staticMenu footerMenu]";a:1:{s:4:"code";s:11:"footer-menu";}s:26:"[staticMenu pagesSideMenu]";a:1:{s:4:"code";s:10:"pages-menu";}s:12:"[newsletter]";a:0:{}}}

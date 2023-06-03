@@ -1,0 +1,66 @@
+1685811467a:1:{s:27:"checkout/checkout.blade.php";a:13:{s:8:"fileName";s:27:"checkout/checkout.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:843:"---
+title: main::lang.checkout.title
+layout: default
+permalink: /checkout
+
+'[account]':
+
+'[localSearch]':
+    hideSearch: 1
+
+'[localBox]':
+    paramFrom: location
+    showLocalThumb: 0
+
+'[cartBox]':
+    pageIsCheckout: true
+
+'[checkout]':
+    showCountryField: 0
+---
+<div class="container">
+    <div class="row py-4">
+        <div class="col col-lg-8">
+            @partial('localBox::container')
+
+            <div class="card my-1">
+                <div class="card-body">
+                    @partial('account/welcome')
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    @component('checkout')
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            @partial('cartBox::container')
+        </div>
+    </div>
+</div>
+";s:6:"markup";s:577:"
+<div class="container">
+    <div class="row py-4">
+        <div class="col col-lg-8">
+            @partial('localBox::container')
+
+            <div class="card my-1">
+                <div class="card-body">
+                    @partial('account/welcome')
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    @component('checkout')
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            @partial('cartBox::container')
+        </div>
+    </div>
+</div>
+";s:4:"code";N;s:5:"title";s:25:"main::lang.checkout.title";s:6:"layout";s:7:"default";s:9:"permalink";s:9:"/checkout";s:9:"[account]";N;s:13:"[localSearch]";a:1:{s:10:"hideSearch";i:1;}s:10:"[localBox]";a:2:{s:9:"paramFrom";s:8:"location";s:14:"showLocalThumb";i:0;}s:9:"[cartBox]";a:1:{s:14:"pageIsCheckout";b:1;}s:10:"[checkout]";a:1:{s:16:"showCountryField";i:0;}}}

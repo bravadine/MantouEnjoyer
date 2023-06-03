@@ -1,0 +1,31 @@
+1685808702a:1:{s:24:"nav/pages_menu.blade.php";a:5:{s:8:"fileName";s:24:"nav/pages_menu.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:566:"<div class="card">
+    <div class="nav flex-column">
+        @foreach ($pagesSideMenu->menuItems() as $topItem)
+            @foreach ($topItem->items as $item)
+                <li class="nav-item">
+                    <a
+                        class="nav-link{{ ($item->isActive || $item->isChildActive) ? ' active fw-bold' : '' }}"
+                        href="{{ $item->url }}"
+                        {!! $item->extraAttributes !!}
+                    >@lang($item->title)</a>
+                </li>
+            @endforeach
+        @endforeach
+    </div>
+</div>
+";s:6:"markup";s:566:"<div class="card">
+    <div class="nav flex-column">
+        @foreach ($pagesSideMenu->menuItems() as $topItem)
+            @foreach ($topItem->items as $item)
+                <li class="nav-item">
+                    <a
+                        class="nav-link{{ ($item->isActive || $item->isChildActive) ? ' active fw-bold' : '' }}"
+                        href="{{ $item->url }}"
+                        {!! $item->extraAttributes !!}
+                    >@lang($item->title)</a>
+                </li>
+            @endforeach
+        @endforeach
+    </div>
+</div>
+";s:4:"code";N;}}

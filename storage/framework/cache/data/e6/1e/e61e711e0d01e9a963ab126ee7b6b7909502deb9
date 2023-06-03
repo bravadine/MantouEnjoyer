@@ -1,0 +1,39 @@
+1685811467a:1:{s:15:"flash.blade.php";a:5:{s:8:"fileName";s:15:"flash.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:803:"@foreach (Flash::all() as $message)
+    @if ($message['overlay'])
+        <div
+            data-control="flash-overlay"
+            data-title="{{ array_get($message, 'title') }}"
+            data-text="{{ array_get($message, 'message') }}"
+            data-icon="{{ $message['level'] }}"
+            data-close-on-click-outside="{{ $message['important'] ? 'false' : 'true' }}"
+            data-close-on-esc="{{ $message['important'] ? 'false' : 'true' }}"
+        ></div>
+@else
+        <div
+            @class(['alert alert-'.$message['level'], 'alert-important' => $message['important']])
+            data-control="flash-message"
+            data-allow-dismiss="{{ $message['important'] ? 'false' : 'true' }}"
+            role="alert"
+        >{!! $message['message'] !!}</div>
+    @endif
+@endforeach
+";s:6:"markup";s:803:"@foreach (Flash::all() as $message)
+    @if ($message['overlay'])
+        <div
+            data-control="flash-overlay"
+            data-title="{{ array_get($message, 'title') }}"
+            data-text="{{ array_get($message, 'message') }}"
+            data-icon="{{ $message['level'] }}"
+            data-close-on-click-outside="{{ $message['important'] ? 'false' : 'true' }}"
+            data-close-on-esc="{{ $message['important'] ? 'false' : 'true' }}"
+        ></div>
+@else
+        <div
+            @class(['alert alert-'.$message['level'], 'alert-important' => $message['important']])
+            data-control="flash-message"
+            data-allow-dismiss="{{ $message['important'] ? 'false' : 'true' }}"
+            role="alert"
+        >{!! $message['message'] !!}</div>
+    @endif
+@endforeach
+";s:4:"code";N;}}

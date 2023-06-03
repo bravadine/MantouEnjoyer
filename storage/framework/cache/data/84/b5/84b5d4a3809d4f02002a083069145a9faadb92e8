@@ -1,0 +1,13 @@
+1685785417a:1:{s:14:"head.blade.php";a:5:{s:8:"fileName";s:14:"head.blade.php";s:5:"mTime";i:1683109498;s:7:"content";s:460:"{!! get_metas() !!}
+<link href="{{ theme_url('demo/assets/images/favicon.svg') }}" rel="shortcut icon" type="image/ico">
+<title>{{ sprintf(lang('main::lang.site_title'), lang(get_title()), setting('site_name')) }}</title>
+<link href="{{ asset('app/admin/assets/css/admin.css') }}" rel="stylesheet" type="text/css" id="flame-css">
+{!! get_style_tags() !!}
+<link href="{{ theme_url('demo/assets/css/demo.css') }}" rel="stylesheet" type="text/css" id="demo-css">
+";s:6:"markup";s:460:"{!! get_metas() !!}
+<link href="{{ theme_url('demo/assets/images/favicon.svg') }}" rel="shortcut icon" type="image/ico">
+<title>{{ sprintf(lang('main::lang.site_title'), lang(get_title()), setting('site_name')) }}</title>
+<link href="{{ asset('app/admin/assets/css/admin.css') }}" rel="stylesheet" type="text/css" id="flame-css">
+{!! get_style_tags() !!}
+<link href="{{ theme_url('demo/assets/css/demo.css') }}" rel="stylesheet" type="text/css" id="demo-css">
+";s:4:"code";N;}}

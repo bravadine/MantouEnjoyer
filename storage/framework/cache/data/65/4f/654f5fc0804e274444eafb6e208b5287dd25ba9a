@@ -1,0 +1,39 @@
+1685811467a:1:{s:19:"locations.blade.php";a:10:{s:8:"fileName";s:19:"locations.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:471:"---
+title: main::lang.locations.title
+layout: default
+permalink: /locations
+
+'[localSearch]':
+
+'[localList]':
+---
+<div class="container">
+    <div class="row py-4">
+        <div class="locations-filter col-sm-3">
+            @partial('localList::filter')
+        </div>
+        <div class="location-list col-sm-9">
+            @partial('localList::search')
+
+            @partial('localList::sorting')
+
+            @component('localList')
+        </div>
+    </div>
+</div>
+";s:6:"markup";s:358:"
+<div class="container">
+    <div class="row py-4">
+        <div class="locations-filter col-sm-3">
+            @partial('localList::filter')
+        </div>
+        <div class="location-list col-sm-9">
+            @partial('localList::search')
+
+            @partial('localList::sorting')
+
+            @component('localList')
+        </div>
+    </div>
+</div>
+";s:4:"code";N;s:5:"title";s:26:"main::lang.locations.title";s:6:"layout";s:7:"default";s:9:"permalink";s:10:"/locations";s:13:"[localSearch]";N;s:11:"[localList]";N;}}

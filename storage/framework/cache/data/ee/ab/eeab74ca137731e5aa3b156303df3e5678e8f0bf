@@ -1,0 +1,25 @@
+1685811467a:1:{s:22:"social_icons.blade.php";a:5:{s:8:"fileName";s:22:"social_icons.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:387:"<ul class="social-icons list-inline">
+    @foreach ($socialIcons = $this->theme->social ?? [] as $icon)
+        <li>
+            <a
+                class="p-2 {{ array_get($icon, 'class') }}"
+                target="_blank"
+                title="{{ array_get($icon, 'title') }}"
+                href="{{ array_get($icon, 'url') }}">
+            </a>
+        </li>
+    @endforeach
+</ul>
+";s:6:"markup";s:387:"<ul class="social-icons list-inline">
+    @foreach ($socialIcons = $this->theme->social ?? [] as $icon)
+        <li>
+            <a
+                class="p-2 {{ array_get($icon, 'class') }}"
+                target="_blank"
+                title="{{ array_get($icon, 'title') }}"
+                href="{{ array_get($icon, 'url') }}">
+            </a>
+        </li>
+    @endforeach
+</ul>
+";s:4:"code";N;}}

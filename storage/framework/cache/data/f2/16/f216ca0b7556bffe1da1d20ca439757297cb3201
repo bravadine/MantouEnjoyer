@@ -1,0 +1,21 @@
+1685785417a:1:{s:20:"components.blade.php";a:9:{s:8:"fileName";s:20:"components.blade.php";s:5:"mTime";i:1683109498;s:7:"content";s:243:"---
+title: main::lang.contact.title
+layout: default
+permalink: /components
+
+'[contact]':
+---
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            @component('contact')
+        </div>
+    </div>
+</div>";s:6:"markup";s:151:"
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            @component('contact')
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:24:"main::lang.contact.title";s:6:"layout";s:7:"default";s:9:"permalink";s:11:"/components";s:9:"[contact]";N;}}

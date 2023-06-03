@@ -1,0 +1,55 @@
+1685811467a:1:{s:23:"local/reviews.blade.php";a:10:{s:8:"fileName";s:23:"local/reviews.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:782:"---
+title: 'main::lang.local.reviews.title'
+permalink: '/:location?local/reviews'
+description: ''
+layout: local
+
+'[localReview]':
+    pageLimit: 10
+    sort: 'created_at asc'
+
+---
+<?php
+function onStart()
+{
+    if (!View::shared('showReviews')) {
+        flash()->error(lang('igniter.local::default.review.alert_review_disabled'))->now();
+
+        return Redirect::to($this->controller->pageUrl($this['localReview']->property('redirectPage')));
+    }
+}
+?>
+---
+@partial('nav/local_tabs', ['activeTab' => 'reviews'])
+
+<div class="panel">
+    <div class="panel-body">
+        <h1 class="panel-title h4">
+            {{ sprintf(lang('igniter.local::default.review.text_review_heading'), $locationCurrent->location_name) }}
+        </h1>
+    </div>
+
+    @component('localReview')
+</div>
+";s:6:"markup";s:323:"
+@partial('nav/local_tabs', ['activeTab' => 'reviews'])
+
+<div class="panel">
+    <div class="panel-body">
+        <h1 class="panel-title h4">
+            {{ sprintf(lang('igniter.local::default.review.text_review_heading'), $locationCurrent->location_name) }}
+        </h1>
+    </div>
+
+    @component('localReview')
+</div>
+";s:4:"code";s:275:"<?php
+function onStart()
+{
+    if (!View::shared('showReviews')) {
+        flash()->error(lang('igniter.local::default.review.alert_review_disabled'))->now();
+
+        return Redirect::to($this->controller->pageUrl($this['localReview']->property('redirectPage')));
+    }
+}
+?>";s:5:"title";s:30:"main::lang.local.reviews.title";s:9:"permalink";s:24:"/:location?local/reviews";s:11:"description";s:0:"";s:6:"layout";s:5:"local";s:13:"[localReview]";a:2:{s:9:"pageLimit";i:10;s:4:"sort";s:14:"created_at asc";}}}

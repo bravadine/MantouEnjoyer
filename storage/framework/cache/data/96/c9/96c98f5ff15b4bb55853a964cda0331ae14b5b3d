@@ -1,0 +1,125 @@
+1685805919a:1:{s:15:"local.blade.php";a:14:{s:8:"fileName";s:15:"local.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:1713:"---
+description: 'Local layout'
+
+'[session]':
+    security: all
+
+'[staticMenu mainMenu]':
+    code: main-menu
+
+'[staticMenu footerMenu]':
+    code: footer-menu
+
+'[newsletter]': {  }
+
+'[localSearch]':
+
+'[localBox]':
+    paramFrom: location
+    showLocalThumb: 0
+
+'[categories]':
+
+'[cartBox]':
+    checkStockCheckout: 1
+    showCartItemThumb: 1
+    pageIsCheckout: 0
+    pageIsCart: 0
+
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ App::getLocale() }}" class="h-100">
+<head>
+    @partial('head')
+</head>
+<body class="d-flex flex-column h-100 {{ $this->page->bodyClass }}">
+
+    <header class="header">
+        @partial('header')
+    </header>
+
+    <main role="main">
+        <div id="page-wrapper">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-lg-2 d-none d-lg-inline-block">
+                        <div class="categories affix-categories">
+                            @component('categories')
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="content">
+                            @partial('localBox::container')
+
+                            @page
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        @partial('cartBox::container')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto d-none d-lg-block">
+        @partial('footer')
+    </footer>
+    <div id="notification">
+        @partial('flash')
+    </div>
+    @partial('eucookiebanner')
+    @partial('scripts')
+</body>
+</html>
+";s:6:"markup";s:1326:"
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ App::getLocale() }}" class="h-100">
+<head>
+    @partial('head')
+</head>
+<body class="d-flex flex-column h-100 {{ $this->page->bodyClass }}">
+
+    <header class="header">
+        @partial('header')
+    </header>
+
+    <main role="main">
+        <div id="page-wrapper">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-lg-2 d-none d-lg-inline-block">
+                        <div class="categories affix-categories">
+                            @component('categories')
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="content">
+                            @partial('localBox::container')
+
+                            @page
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        @partial('cartBox::container')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto d-none d-lg-block">
+        @partial('footer')
+    </footer>
+    <div id="notification">
+        @partial('flash')
+    </div>
+    @partial('eucookiebanner')
+    @partial('scripts')
+</body>
+</html>
+";s:4:"code";N;s:11:"description";s:12:"Local layout";s:9:"[session]";a:1:{s:8:"security";s:3:"all";}s:21:"[staticMenu mainMenu]";a:1:{s:4:"code";s:9:"main-menu";}s:23:"[staticMenu footerMenu]";a:1:{s:4:"code";s:11:"footer-menu";}s:12:"[newsletter]";a:0:{}s:13:"[localSearch]";N;s:10:"[localBox]";a:2:{s:9:"paramFrom";s:8:"location";s:14:"showLocalThumb";i:0;}s:12:"[categories]";N;s:9:"[cartBox]";a:4:{s:18:"checkStockCheckout";i:1;s:17:"showCartItemThumb";i:1;s:14:"pageIsCheckout";i:0;s:10:"pageIsCart";i:0;}}}

@@ -1,0 +1,42 @@
+1685811467a:1:{s:30:"account/reservations.blade.php";a:10:{s:8:"fileName";s:30:"account/reservations.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:554:"---
+title: main::lang.account.reservations.title
+layout: account
+permalink: /account/reservations/:hash?
+
+'[accountReservations]':
+
+'[localReview]':
+    reviewableType: reservation
+---
+<div class="container">
+    <div class="row py-5">
+        <div class="col-sm-3">
+            @partial('account/sidebar')
+        </div>
+
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-body">
+                    @component('accountReservations')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+";s:6:"markup";s:370:"
+<div class="container">
+    <div class="row py-5">
+        <div class="col-sm-3">
+            @partial('account/sidebar')
+        </div>
+
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-body">
+                    @component('accountReservations')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+";s:4:"code";N;s:5:"title";s:37:"main::lang.account.reservations.title";s:6:"layout";s:7:"account";s:9:"permalink";s:28:"/account/reservations/:hash?";s:21:"[accountReservations]";N;s:13:"[localReview]";a:1:{s:14:"reviewableType";s:11:"reservation";}}}

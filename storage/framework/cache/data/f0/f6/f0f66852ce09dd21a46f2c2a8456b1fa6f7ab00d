@@ -1,0 +1,9 @@
+1685805923a:1:{s:25:"account/welcome.blade.php";a:5:{s:8:"fileName";s:25:"account/welcome.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:217:"{!! $customer
+        ? sprintf(lang('igniter.user::default.text_logged_out'), e($customer->first_name), 'session::onLogout')
+        : sprintf(lang('igniter.user::default.text_logged_in'), $session->loginUrl())
+ !!}
+";s:6:"markup";s:217:"{!! $customer
+        ? sprintf(lang('igniter.user::default.text_logged_out'), e($customer->first_name), 'session::onLogout')
+        : sprintf(lang('igniter.user::default.text_logged_in'), $session->loginUrl())
+ !!}
+";s:4:"code";N;}}

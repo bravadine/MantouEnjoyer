@@ -1,0 +1,59 @@
+1685785417a:1:{s:17:"default.blade.php";a:6:{s:8:"fileName";s:17:"default.blade.php";s:5:"mTime";i:1683109498;s:7:"content";s:902:"---
+description: Default layout
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ App::getLocale() }}">
+<head>
+    @partial('head')
+</head>
+<body class="d-flex flex-column h-100 {{ $this->page->bodyClass }}">
+    <header id="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="logo">
+                        <a class="" href="{{ page_url('home') }}">@lang($this->page->title)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="page-wrapper" class="content-area">
+        @page
+    </div>
+
+    <footer id="page-footer mt-auto">
+        @partial('footer')
+    </footer>
+    <script type="text/javascript" src="{{ asset('app/admin/assets/js/admin.js') }}" id="app-js"></script>
+    {!! get_script_tags() !!}</body>
+</html>";s:6:"markup";s:867:"
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ App::getLocale() }}">
+<head>
+    @partial('head')
+</head>
+<body class="d-flex flex-column h-100 {{ $this->page->bodyClass }}">
+    <header id="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="logo">
+                        <a class="" href="{{ page_url('home') }}">@lang($this->page->title)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="page-wrapper" class="content-area">
+        @page
+    </div>
+
+    <footer id="page-footer mt-auto">
+        @partial('footer')
+    </footer>
+    <script type="text/javascript" src="{{ asset('app/admin/assets/js/admin.js') }}" id="app-js"></script>
+    {!! get_script_tags() !!}</body>
+</html>";s:4:"code";N;s:11:"description";s:14:"Default layout";}}

@@ -1,0 +1,31 @@
+1685811467a:1:{s:14:"home.blade.php";a:12:{s:8:"fileName";s:14:"home.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:355:"---
+title: 'main::lang.home.title'
+permalink: /
+description: ''
+layout: default
+
+'[slider]':
+    code: home-slider
+
+'[localSearch]':
+    hideSearch: 0
+
+'[featuredItems]':
+    items: ['6', '7', '8', '9']
+    limit: 3
+    itemsPerRow: 3
+    itemWidth: 400
+    itemHeight: 300
+---
+@component('slider')
+
+@component('localSearch')
+
+@component('featuredItems')
+";s:6:"markup";s:78:"
+@component('slider')
+
+@component('localSearch')
+
+@component('featuredItems')
+";s:4:"code";N;s:5:"title";s:21:"main::lang.home.title";s:9:"permalink";s:1:"/";s:11:"description";s:0:"";s:6:"layout";s:7:"default";s:8:"[slider]";a:1:{s:4:"code";s:11:"home-slider";}s:13:"[localSearch]";a:1:{s:10:"hideSearch";i:0;}s:15:"[featuredItems]";a:5:{s:5:"items";a:4:{i:0;s:1:"6";i:1;s:1:"7";i:2;s:1:"8";i:3;s:1:"9";}s:5:"limit";i:3;s:11:"itemsPerRow";i:3;s:9:"itemWidth";i:400;s:10:"itemHeight";i:300;}}}

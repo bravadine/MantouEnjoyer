@@ -1,0 +1,17 @@
+1685811467a:1:{s:15:"error.blade.php";a:8:{s:8:"fileName";s:15:"error.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:245:"---
+title: Error page (500)
+layout: default
+permalink: /error
+---
+<div class="jumbotron">
+    <div class="container">
+        <h1>Error</h1>
+        <p>We're sorry, but something went wrong and the page cannot be displayed.</p>
+    </div>
+</div>";s:6:"markup";s:180:"
+<div class="jumbotron">
+    <div class="container">
+        <h1>Error</h1>
+        <p>We're sorry, but something went wrong and the page cannot be displayed.</p>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:16:"Error page (500)";s:6:"layout";s:7:"default";s:9:"permalink";s:6:"/error";}}

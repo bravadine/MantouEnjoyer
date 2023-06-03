@@ -1,0 +1,15 @@
+1685811467a:1:{s:20:"local/info.blade.php";a:9:{s:8:"fileName";s:20:"local/info.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:183:"---
+title: main::lang.local.info.title
+layout: local
+permalink: /:location?local/info
+
+'[localInfo]':
+---
+@partial('nav/local_tabs', ['activeTab' => 'info'])
+
+@component('localInfo')
+";s:6:"markup";s:78:"
+@partial('nav/local_tabs', ['activeTab' => 'info'])
+
+@component('localInfo')
+";s:4:"code";N;s:5:"title";s:27:"main::lang.local.info.title";s:6:"layout";s:5:"local";s:9:"permalink";s:21:"/:location?local/info";s:11:"[localInfo]";N;}}

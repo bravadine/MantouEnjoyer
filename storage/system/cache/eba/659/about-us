@@ -1,0 +1,6 @@
+<?php 
+/* /var/www/html/themes/tastyigniter-orange/_pages/about-us */
+class Pagic647b615cada30496573587_8b2b2f01a65a6575ca34ef8d6d959001Class extends \Main\Template\Code\PageCode
+{
+
+}

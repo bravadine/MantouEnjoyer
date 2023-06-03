@@ -1,0 +1,34 @@
+1685811467a:1:{s:21:"local/menus.blade.php";a:10:{s:8:"fileName";s:21:"local/menus.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:472:"---
+title: 'main::lang.local.menus.title'
+permalink: '/:location?local/menus/:category?'
+description: ''
+layout: local
+
+'[localMenu]':
+    isGrouped: 1
+    menusPerPage: 200
+    showMenuImages: 0
+    menuImageWidth: 95
+    menuImageHeight: 80
+
+---
+@partial('nav/local_tabs', ['activeTab' => 'menus'])
+
+<div class="panel">
+    <div class="bg-white border-bottom px-3 d-block d-lg-none">
+        @partial('categories::mobile')
+    </div>
+
+    @component('localMenu')
+</div>
+";s:6:"markup";s:225:"
+@partial('nav/local_tabs', ['activeTab' => 'menus'])
+
+<div class="panel">
+    <div class="bg-white border-bottom px-3 d-block d-lg-none">
+        @partial('categories::mobile')
+    </div>
+
+    @component('localMenu')
+</div>
+";s:4:"code";N;s:5:"title";s:28:"main::lang.local.menus.title";s:9:"permalink";s:33:"/:location?local/menus/:category?";s:11:"description";s:0:"";s:6:"layout";s:5:"local";s:11:"[localMenu]";a:5:{s:9:"isGrouped";i:1;s:12:"menusPerPage";i:200;s:14:"showMenuImages";i:0;s:14:"menuImageWidth";i:95;s:15:"menuImageHeight";i:80;}}}

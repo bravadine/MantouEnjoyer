@@ -1,0 +1,35 @@
+1685811467a:1:{s:18:"nav/logo.blade.php";a:5:{s:8:"fileName";s:18:"nav/logo.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:539:"<a class="navbar-brand" href="{{ page_url('home') }}">
+    @if ($this->theme->logo_image)
+        <img
+            class="img-logo"
+            alt="{{ setting('site_name') }}"
+            src="{{ uploads_url($this->theme->logo_image) }}"
+        />
+    @elseif ($this->theme->logo_text)
+        <span class="text-logo">{{ $this->theme->logo_text }}</span>
+    @else
+        <img
+            class="img-logo"
+            alt="{{ setting('site_name') }}"
+            src="{{ uploads_url(setting('site_logo')) }}"
+        />
+    @endif
+</a>
+";s:6:"markup";s:539:"<a class="navbar-brand" href="{{ page_url('home') }}">
+    @if ($this->theme->logo_image)
+        <img
+            class="img-logo"
+            alt="{{ setting('site_name') }}"
+            src="{{ uploads_url($this->theme->logo_image) }}"
+        />
+    @elseif ($this->theme->logo_text)
+        <span class="text-logo">{{ $this->theme->logo_text }}</span>
+    @else
+        <img
+            class="img-logo"
+            alt="{{ setting('site_name') }}"
+            src="{{ uploads_url(setting('site_logo')) }}"
+        />
+    @endif
+</a>
+";s:4:"code";N;}}

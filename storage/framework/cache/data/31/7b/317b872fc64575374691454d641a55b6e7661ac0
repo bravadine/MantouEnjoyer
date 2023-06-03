@@ -1,0 +1,51 @@
+1685785440a:1:{s:35:"pagination/simple_default.blade.php";a:5:{s:8:"fileName";s:35:"pagination/simple_default.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:758:"@if ($paginator->hasPages())
+    <ul class="pagination">
+        @if ($paginator->onFirstPage())
+            <li class="disabled"><span>@lang('pagination.previous')</span></li>
+        @else
+            <li>
+                <a
+                    href="{{ $paginator->previousPageUrl() }}"
+                    rel="prev"
+                >@lang('pagination.previous')</a>
+            </li>
+        @endif
+
+        @if ($paginator->hasMorePages())
+            <li>
+                <a
+                    href="{{ $paginator->nextPageUrl() }}"
+                    rel="next"
+                >@lang('pagination.next')</a>
+            </li>
+        @else
+            <li class="disabled"><span>@lang('pagination.next')</span></li>
+        @endif
+    </ul>
+@endif
+";s:6:"markup";s:758:"@if ($paginator->hasPages())
+    <ul class="pagination">
+        @if ($paginator->onFirstPage())
+            <li class="disabled"><span>@lang('pagination.previous')</span></li>
+        @else
+            <li>
+                <a
+                    href="{{ $paginator->previousPageUrl() }}"
+                    rel="prev"
+                >@lang('pagination.previous')</a>
+            </li>
+        @endif
+
+        @if ($paginator->hasMorePages())
+            <li>
+                <a
+                    href="{{ $paginator->nextPageUrl() }}"
+                    rel="next"
+                >@lang('pagination.next')</a>
+            </li>
+        @else
+            <li class="disabled"><span>@lang('pagination.next')</span></li>
+        @endif
+    </ul>
+@endif
+";s:4:"code";N;}}

@@ -1,0 +1,74 @@
+1685811467a:1:{s:23:"account/login.blade.php";a:11:{s:8:"fileName";s:23:"account/login.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:1413:"---
+title: main::lang.account.login.title
+layout: default
+permalink: /login
+
+'[session]':
+security: guest
+
+'[account]':
+---
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 mx-auto my-5">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title h4 mb-4 font-weight-normal">
+                        @lang('main::lang.account.login.text_login')
+                    </h1>
+
+                    @partial('account::login')
+
+                    <div class="row">
+                        <div class="col-md-5 p-sm-0">
+                            <a class="btn btn-link btn-lg" href="{{ site_url('account/reset') }}">
+                                <span class="small">@lang('main::lang.account.login.text_forgot')</span>
+                            </a>
+                        </div>
+                        @if ((bool)$canRegister)
+                            <div class="col-sm-7">
+                                <a
+                                    class="btn btn-outline-default btn-block btn-lg"
+                                    href="{{ site_url('account/register') }}"
+                                >@lang('main::lang.account.login.button_register')</a>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+";s:6:"markup";s:1290:"
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 mx-auto my-5">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title h4 mb-4 font-weight-normal">
+                        @lang('main::lang.account.login.text_login')
+                    </h1>
+
+                    @partial('account::login')
+
+                    <div class="row">
+                        <div class="col-md-5 p-sm-0">
+                            <a class="btn btn-link btn-lg" href="{{ site_url('account/reset') }}">
+                                <span class="small">@lang('main::lang.account.login.text_forgot')</span>
+                            </a>
+                        </div>
+                        @if ((bool)$canRegister)
+                            <div class="col-sm-7">
+                                <a
+                                    class="btn btn-outline-default btn-block btn-lg"
+                                    href="{{ site_url('account/register') }}"
+                                >@lang('main::lang.account.login.button_register')</a>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+";s:4:"code";N;s:5:"title";s:30:"main::lang.account.login.title";s:6:"layout";s:7:"default";s:9:"permalink";s:6:"/login";s:9:"[session]";N;s:8:"security";s:5:"guest";s:9:"[account]";N;}}

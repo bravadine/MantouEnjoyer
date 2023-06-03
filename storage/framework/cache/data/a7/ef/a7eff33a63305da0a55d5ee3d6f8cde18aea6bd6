@@ -1,0 +1,24 @@
+1685811467a:1:{s:26:"checkout/success.blade.php";a:10:{s:8:"fileName";s:26:"checkout/success.blade.php";s:5:"mTime";i:1678761688;s:7:"content";s:314:"---
+title: main::lang.checkout.success.title
+layout: default
+permalink: /checkout/success/:hash?
+
+'[orderPage]':
+    hideReorderBtn: 1
+
+'[localReview]':
+---
+<div class="container">
+    <div class="row py-4">
+        <div class="col-sm-9 m-auto">
+            @component('orderPage')
+        </div>
+    </div>
+</div>";s:6:"markup";s:158:"
+<div class="container">
+    <div class="row py-4">
+        <div class="col-sm-9 m-auto">
+            @component('orderPage')
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:33:"main::lang.checkout.success.title";s:6:"layout";s:7:"default";s:9:"permalink";s:24:"/checkout/success/:hash?";s:11:"[orderPage]";a:1:{s:14:"hideReorderBtn";i:1;}s:13:"[localReview]";N;}}
