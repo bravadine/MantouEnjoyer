@@ -16,9 +16,9 @@ use Symfony\Component\CssSelector\Parser\Token;
 use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerEscaping;
 use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerPatterns;
 
-class HashHandlerTest extends AbstractHandlerTestCase
+class HashHandlerTest extends AbstractHandlerTest
 {
-    public static function getHandleValueTestData()
+    public function getHandleValueTestData()
     {
         return [
             ['#id', new Token(Token::TYPE_HASH, 'id', 0), ''],
@@ -29,7 +29,7 @@ class HashHandlerTest extends AbstractHandlerTestCase
         ];
     }
 
-    public static function getDontHandleValueTestData()
+    public function getDontHandleValueTestData()
     {
         return [
             ['id'],

@@ -45,4 +45,3 @@ EOF
 <?php echo $view['translator']->trans('typecast', ['a' => (int) '123'], 'not_messages'); ?>
 
 <?php echo $view['translator']->trans('default domain', [], null); ?>
-

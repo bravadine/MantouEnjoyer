@@ -172,7 +172,7 @@ EOF;
     public function testPassingClosureAndCallableToConstructor()
     {
         $command = new XliffLintCommand('translation:xliff:lint',
-            $this->testPassingClosureAndCallableToConstructor(...),
+            \Closure::fromCallable([$this, 'testPassingClosureAndCallableToConstructor']),
             [$this, 'testPassingClosureAndCallableToConstructor']
         );
 
@@ -240,7 +240,7 @@ XLIFF;
         @rmdir(sys_get_temp_dir().'/translation-xliff-lint-test');
     }
 
-    public static function provideStrictFilenames()
+    public function provideStrictFilenames()
     {
         yield [false, 'messages.%locale%.xlf', 'en', false];
         yield [false, 'messages.%locale%.xlf', 'es', true];
@@ -262,7 +262,7 @@ XLIFF;
         $this->assertSame($expectedSuggestions, $tester->complete($input));
     }
 
-    public static function provideCompletionSuggestions()
+    public function provideCompletionSuggestions()
     {
         yield 'option' => [['--format', ''], ['txt', 'json', 'github']];
     }

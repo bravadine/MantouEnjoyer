@@ -16,9 +16,9 @@ use Symfony\Component\CssSelector\Parser\Token;
 use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerEscaping;
 use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerPatterns;
 
-class StringHandlerTest extends AbstractHandlerTestCase
+class StringHandlerTest extends AbstractHandlerTest
 {
-    public static function getHandleValueTestData()
+    public function getHandleValueTestData()
     {
         return [
             ['"hello"', new Token(Token::TYPE_STRING, 'hello', 1), ''],
@@ -31,7 +31,7 @@ class StringHandlerTest extends AbstractHandlerTestCase
         ];
     }
 
-    public static function getDontHandleValueTestData()
+    public function getDontHandleValueTestData()
     {
         return [
             ['hello'],

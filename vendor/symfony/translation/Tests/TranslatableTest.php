@@ -47,7 +47,7 @@ class TranslatableTest extends TestCase
         $this->assertSame('Symfony is great!', (string) new TranslatableMessage('Symfony is great!'));
     }
 
-    public static function getTransTests()
+    public function getTransTests()
     {
         return [
             ['Symfony est super !', new TranslatableMessage('Symfony is great!', [], ''), [
@@ -63,7 +63,7 @@ class TranslatableTest extends TestCase
         ];
     }
 
-    public static function getFlattenedTransTests()
+    public function getFlattenedTransTests()
     {
         $messages = [
             'symfony' => [

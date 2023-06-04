@@ -15,16 +15,16 @@ use Symfony\Component\CssSelector\Node\ClassNode;
 use Symfony\Component\CssSelector\Node\ElementNode;
 use Symfony\Component\CssSelector\Node\NegationNode;
 
-class NegationNodeTest extends AbstractNodeTestCase
+class NegationNodeTest extends AbstractNodeTest
 {
-    public static function getToStringConversionTestData()
+    public function getToStringConversionTestData()
     {
         return [
             [new NegationNode(new ElementNode(), new ClassNode(new ElementNode(), 'class')), 'Negation[Element[*]:not(Class[Element[*].class])]'],
         ];
     }
 
-    public static function getSpecificityValueTestData()
+    public function getSpecificityValueTestData()
     {
         return [
             [new NegationNode(new ElementNode(), new ClassNode(new ElementNode(), 'class')), 10],

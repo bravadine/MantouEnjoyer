@@ -47,7 +47,7 @@ final class UnsupportedSchemeExceptionTest extends TestCase
         );
     }
 
-    public static function messageWhereSchemeIsPartOfSchemeToPackageMapProvider(): \Generator
+    public function messageWhereSchemeIsPartOfSchemeToPackageMapProvider(): \Generator
     {
         yield ['crowdin', 'symfony/crowdin-translation-provider'];
         yield ['loco', 'symfony/loco-translation-provider'];
@@ -65,7 +65,7 @@ final class UnsupportedSchemeExceptionTest extends TestCase
         );
     }
 
-    public static function messageWhereSchemeIsNotPartOfSchemeToPackageMapProvider(): \Generator
+    public function messageWhereSchemeIsNotPartOfSchemeToPackageMapProvider(): \Generator
     {
         yield [
             'The "somethingElse" scheme is not supported.',

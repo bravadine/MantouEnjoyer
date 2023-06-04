@@ -14,16 +14,16 @@ namespace Symfony\Component\CssSelector\Tests\Node;
 use Symfony\Component\CssSelector\Node\ElementNode;
 use Symfony\Component\CssSelector\Node\HashNode;
 
-class HashNodeTest extends AbstractNodeTestCase
+class HashNodeTest extends AbstractNodeTest
 {
-    public static function getToStringConversionTestData()
+    public function getToStringConversionTestData()
     {
         return [
             [new HashNode(new ElementNode(), 'id'), 'Hash[Element[*]#id]'],
         ];
     }
 
-    public static function getSpecificityValueTestData()
+    public function getSpecificityValueTestData()
     {
         return [
             [new HashNode(new ElementNode(), 'id'), 100],

@@ -14,11 +14,12 @@ namespace Symfony\Component\String\Tests;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\String\AbstractString;
 use Symfony\Component\String\ByteString;
-use Symfony\Component\String\UnicodeString;
 
 use function Symfony\Component\String\b;
 use function Symfony\Component\String\s;
 use function Symfony\Component\String\u;
+
+use Symfony\Component\String\UnicodeString;
 
 final class FunctionsTest extends TestCase
 {
@@ -30,7 +31,7 @@ final class FunctionsTest extends TestCase
         $this->assertEquals($expected, s($input));
     }
 
-    public static function provideSStrings(): array
+    public function provideSStrings(): array
     {
         return [
             [new UnicodeString(''), ''],
@@ -50,7 +51,7 @@ final class FunctionsTest extends TestCase
         $this->assertEquals($expected, u($input));
     }
 
-    public static function provideUStrings(): array
+    public function provideUStrings(): array
     {
         return [
             [new UnicodeString(''), ''],
@@ -68,7 +69,7 @@ final class FunctionsTest extends TestCase
         $this->assertEquals($expected, b($input));
     }
 
-    public static function provideBStrings(): array
+    public function provideBStrings(): array
     {
         return [
             [new ByteString(''), ''],

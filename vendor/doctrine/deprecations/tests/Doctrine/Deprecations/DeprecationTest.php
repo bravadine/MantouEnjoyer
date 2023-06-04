@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Doctrine\Deprecations;
 
+use DeprecationTests\ConstructorDeprecation;
 use DeprecationTests\Foo;
 use DeprecationTests\RootDeprecation;
 use Doctrine\Deprecations\PHPUnit\VerifyDeprecations;
 use Doctrine\Foo\Baz;
 use PHPUnit\Framework\Error\Deprecated;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
+use ReflectionClass;
 use ReflectionProperty;
 use Throwable;
 
@@ -24,14 +25,16 @@ class DeprecationTest extends TestCase
 
     public function setUp(): void
     {
-        // reset the global state of Deprecation class accross tests
+        // reset the global state of Deprecation class across tests
         $reflectionProperty = new ReflectionProperty(Deprecation::class, 'ignoredPackages');
         $reflectionProperty->setAccessible(true);
         $reflectionProperty->setValue([]);
 
-        $reflectionProperty = new ReflectionProperty(Deprecation::class, 'ignoredLinks');
+        $reflectionProperty = new ReflectionProperty(Deprecation::class, 'triggeredDeprecations');
         $reflectionProperty->setAccessible(true);
         $reflectionProperty->setValue([]);
+
+        Deprecation::disable();
 
         Deprecation::enableTrackingDeprecations();
     }
@@ -56,12 +59,14 @@ class DeprecationTest extends TestCase
 
     public function expectErrorHandler(string $expectedMessage, string $identifier, int $times = 1): void
     {
-        set_error_handler(function ($type, $message) use ($expectedMessage, $identifier, $times): void {
+        set_error_handler(function ($type, $message) use ($expectedMessage, $identifier, $times): bool {
             $this->assertStringMatchesFormat(
                 $expectedMessage,
                 $message
             );
             $this->assertEquals([$identifier => $times], Deprecation::getTriggeredDeprecations());
+
+            return false;
         });
     }
 
@@ -152,10 +157,10 @@ class DeprecationTest extends TestCase
         }
     }
 
-    public function expectDeprecationMock(string $message, string $identifier, string $package): MockObject
+    public function expectDeprecationMock(string $message, string $identifier, string $package): LoggerInterface
     {
         $mock = $this->createMock(LoggerInterface::class);
-        $mock->method('notice')->with($message, $this->callback(function ($context) use ($identifier, $package) {
+        $mock->method('notice')->with($message, $this->callback(function (array $context) use ($identifier, $package) {
             $this->assertEquals($package, $context['package']);
             $this->assertEquals($identifier, $context['link']);
 
@@ -202,12 +207,29 @@ class DeprecationTest extends TestCase
         $this->assertEquals(['https://github.com/doctrine/orm/issue/1234' => 1], Deprecation::getTriggeredDeprecations());
     }
 
+    public function testDeprecationWithIgnoredLink(): void
+    {
+        Deprecation::enableWithTriggerError();
+        Deprecation::ignoreDeprecations('https://github.com/doctrine/orm/issue/1234');
+
+        Deprecation::trigger(
+            'doctrine/orm',
+            'https://github.com/doctrine/orm/issue/1234',
+            'this is deprecated %s %d',
+            'foo',
+            1234
+        );
+
+        $this->assertEquals(0, Deprecation::getUniqueTriggeredDeprecationsCount());
+        $this->assertEquals([], Deprecation::getTriggeredDeprecations());
+    }
+
     public function testDeprecationIfCalledFromOutside(): void
     {
         Deprecation::enableWithTriggerError();
 
         $this->expectErrorHandler(
-            'Bar::oldFunc() is deprecated, use Bar::newFunc() instead. (Bar.php:16 called by Foo.php:14, https://github.com/doctrine/foo, package doctrine/foo)',
+            'Bar::oldFunc() is deprecated, use Bar::newFunc() instead. (Bar.php:%d called by Foo.php:14, https://github.com/doctrine/foo, package doctrine/foo)',
             'https://github.com/doctrine/foo'
         );
 
@@ -247,5 +269,51 @@ class DeprecationTest extends TestCase
         RootDeprecation::run();
 
         $this->assertEquals(1, Deprecation::getUniqueTriggeredDeprecationsCount());
+    }
+
+    public function testDeprecationTrackByEnv(): void
+    {
+        $reflectionProperty = new ReflectionProperty(Deprecation::class, 'type');
+        $reflectionProperty->setAccessible(true);
+        $reflectionProperty->setValue(null);
+
+        Deprecation::trigger('Foo', 'link', 'message');
+        $this->assertSame(0, Deprecation::getUniqueTriggeredDeprecationsCount());
+
+        $reflectionProperty->setValue(null);
+        $_SERVER['DOCTRINE_DEPRECATIONS'] = 'track';
+
+        Deprecation::trigger('Foo', __METHOD__, 'message');
+        $this->assertSame(1, Deprecation::getUniqueTriggeredDeprecationsCount());
+    }
+
+    public function testDeprecationTriggerByEnv(): void
+    {
+        $reflectionProperty = new ReflectionProperty(Deprecation::class, 'type');
+        $reflectionProperty->setAccessible(true);
+        $reflectionProperty->setValue(null);
+        $_ENV['DOCTRINE_DEPRECATIONS'] = 'trigger';
+
+        $this->expectErrorHandler(
+            'message (DeprecationTest.php:%d called by TestCase.php:%d, ' . __METHOD__ . ', package Foo)',
+            __METHOD__
+        );
+
+        Deprecation::trigger('Foo', __METHOD__, 'message');
+        $this->assertSame(1, Deprecation::getUniqueTriggeredDeprecationsCount());
+    }
+
+    public function testDeprecationTriggeredFromNativeCode(): void
+    {
+        $ref = new ReflectionClass(ConstructorDeprecation::class);
+
+        Deprecation::enableWithTriggerError();
+        $this->expectErrorHandler(
+            'This constructor is deprecated. (ConstructorDeprecation.php:%d called by native code:0, https://github.com/doctrine/deprecations/issues/44, package doctrine/bar)',
+            'https://github.com/doctrine/deprecations/issues/44'
+        );
+
+        $ref->newInstance();
+        $this->assertSame(1, Deprecation::getUniqueTriggeredDeprecationsCount());
     }
 }

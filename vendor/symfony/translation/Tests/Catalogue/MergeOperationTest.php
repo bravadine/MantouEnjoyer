@@ -15,7 +15,7 @@ use Symfony\Component\Translation\Catalogue\MergeOperation;
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\MessageCatalogueInterface;
 
-class MergeOperationTest extends AbstractOperationTestCase
+class MergeOperationTest extends AbstractOperationTest
 {
     public function testGetMessagesFromSingleDomain()
     {

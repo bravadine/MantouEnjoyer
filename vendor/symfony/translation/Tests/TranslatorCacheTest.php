@@ -302,7 +302,7 @@ class TranslatorCacheTest extends TestCase
         return $catalogue;
     }
 
-    public static function runForDebugAndProduction()
+    public function runForDebugAndProduction()
     {
         return [[true], [false]];
     }

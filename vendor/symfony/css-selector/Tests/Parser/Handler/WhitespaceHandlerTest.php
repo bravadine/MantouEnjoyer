@@ -14,9 +14,9 @@ namespace Symfony\Component\CssSelector\Tests\Parser\Handler;
 use Symfony\Component\CssSelector\Parser\Handler\WhitespaceHandler;
 use Symfony\Component\CssSelector\Parser\Token;
 
-class WhitespaceHandlerTest extends AbstractHandlerTestCase
+class WhitespaceHandlerTest extends AbstractHandlerTest
 {
-    public static function getHandleValueTestData()
+    public function getHandleValueTestData()
     {
         return [
             [' ', new Token(Token::TYPE_WHITESPACE, ' ', 0), ''],
@@ -28,7 +28,7 @@ class WhitespaceHandlerTest extends AbstractHandlerTestCase
         ];
     }
 
-    public static function getDontHandleValueTestData()
+    public function getDontHandleValueTestData()
     {
         return [
             ['>'],

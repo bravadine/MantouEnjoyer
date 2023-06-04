@@ -96,6 +96,7 @@ class ReaderTest extends TestCase
     private function assignPosition(Reader $reader, int $value)
     {
         $position = new \ReflectionProperty($reader, 'position');
+        $position->setAccessible(true);
         $position->setValue($reader, $value);
     }
 }

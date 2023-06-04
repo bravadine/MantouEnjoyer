@@ -14,16 +14,16 @@ namespace Symfony\Component\CssSelector\Tests\Node;
 use Symfony\Component\CssSelector\Node\ElementNode;
 use Symfony\Component\CssSelector\Node\PseudoNode;
 
-class PseudoNodeTest extends AbstractNodeTestCase
+class PseudoNodeTest extends AbstractNodeTest
 {
-    public static function getToStringConversionTestData()
+    public function getToStringConversionTestData()
     {
         return [
             [new PseudoNode(new ElementNode(), 'pseudo'), 'Pseudo[Element[*]:pseudo]'],
         ];
     }
 
-    public static function getSpecificityValueTestData()
+    public function getSpecificityValueTestData()
     {
         return [
             [new PseudoNode(new ElementNode(), 'pseudo'), 10],

@@ -15,9 +15,9 @@ use Symfony\Component\CssSelector\Parser\Handler\NumberHandler;
 use Symfony\Component\CssSelector\Parser\Token;
 use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerPatterns;
 
-class NumberHandlerTest extends AbstractHandlerTestCase
+class NumberHandlerTest extends AbstractHandlerTest
 {
-    public static function getHandleValueTestData()
+    public function getHandleValueTestData()
     {
         return [
             ['12', new Token(Token::TYPE_NUMBER, '12', 0), ''],
@@ -30,7 +30,7 @@ class NumberHandlerTest extends AbstractHandlerTestCase
         ];
     }
 
-    public static function getDontHandleValueTestData()
+    public function getDontHandleValueTestData()
     {
         return [
             ['hello'],

@@ -69,7 +69,7 @@ _MSG_;
         $this->assertEquals('Fabien invites Guilherme as one of the 9 people invited to his party.', $message);
     }
 
-    public static function provideDataForFormat()
+    public function provideDataForFormat()
     {
         return [
             [

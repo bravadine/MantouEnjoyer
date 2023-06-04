@@ -10,7 +10,7 @@ dnf install -y httpd mariadb105 php php-mysqli php-gd php-json php-mbstring mod_
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');";
 php composer-setup.php;
 php -r "unlink('composer-setup.php');";
-mv composer.phar /usr/local/bin/composer
+mv composer.phar /usr/local/bin/composer;
 
 # install php-zip extension (through pecl)
 dnf install -y php-devel php-pear libzip libzip-devel;

@@ -93,7 +93,7 @@ class ParserTest extends TestCase
         Parser::parseSeries($function->getArguments());
     }
 
-    public static function getParserTestData()
+    public function getParserTestData()
     {
         return [
             ['*', ['Element[*]']],
@@ -151,7 +151,7 @@ class ParserTest extends TestCase
         ];
     }
 
-    public static function getParserExceptionTestData()
+    public function getParserExceptionTestData()
     {
         return [
             ['attributes(href)/html/body/a', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '(', 10))->getMessage()],
@@ -181,7 +181,7 @@ class ParserTest extends TestCase
         ];
     }
 
-    public static function getPseudoElementsTestData()
+    public function getPseudoElementsTestData()
     {
         return [
             ['foo', 'Element[foo]', ''],
@@ -203,7 +203,7 @@ class ParserTest extends TestCase
         ];
     }
 
-    public static function getSpecificityTestData()
+    public function getSpecificityTestData()
     {
         return [
             ['*', 0],
@@ -231,7 +231,7 @@ class ParserTest extends TestCase
         ];
     }
 
-    public static function getParseSeriesTestData()
+    public function getParseSeriesTestData()
     {
         return [
             ['1n+3', 1, 3],
@@ -253,7 +253,7 @@ class ParserTest extends TestCase
         ];
     }
 
-    public static function getParseSeriesExceptionTestData()
+    public function getParseSeriesExceptionTestData()
     {
         return [
             ['foo'],

@@ -32,7 +32,7 @@ class HashParserTest extends TestCase
         $this->assertEquals($representation, (string) $selector->getTree());
     }
 
-    public static function getParseTestData()
+    public function getParseTestData()
     {
         return [
             ['#testid', 'Hash[Element[*]#testid]'],

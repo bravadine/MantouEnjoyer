@@ -16,7 +16,7 @@ use Symfony\Component\String\Inflector\FrenchInflector;
 
 class FrenchInflectorTest extends TestCase
 {
-    public static function pluralizeProvider()
+    public function pluralizeProvider()
     {
         return [
             // Le pluriel par défaut

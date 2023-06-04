@@ -14,9 +14,9 @@ namespace Symfony\Component\CssSelector\Tests\Node;
 use Symfony\Component\CssSelector\Node\CombinedSelectorNode;
 use Symfony\Component\CssSelector\Node\ElementNode;
 
-class CombinedSelectorNodeTest extends AbstractNodeTestCase
+class CombinedSelectorNodeTest extends AbstractNodeTest
 {
-    public static function getToStringConversionTestData()
+    public function getToStringConversionTestData()
     {
         return [
             [new CombinedSelectorNode(new ElementNode(), '>', new ElementNode()), 'CombinedSelector[Element[*] > Element[*]]'],
@@ -24,7 +24,7 @@ class CombinedSelectorNodeTest extends AbstractNodeTestCase
         ];
     }
 
-    public static function getSpecificityValueTestData()
+    public function getSpecificityValueTestData()
     {
         return [
             [new CombinedSelectorNode(new ElementNode(), '>', new ElementNode()), 0],

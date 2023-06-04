@@ -14,9 +14,9 @@ namespace Symfony\Component\CssSelector\Tests\Node;
 use Symfony\Component\CssSelector\Node\AttributeNode;
 use Symfony\Component\CssSelector\Node\ElementNode;
 
-class AttributeNodeTest extends AbstractNodeTestCase
+class AttributeNodeTest extends AbstractNodeTest
 {
-    public static function getToStringConversionTestData()
+    public function getToStringConversionTestData()
     {
         return [
             [new AttributeNode(new ElementNode(), null, 'attribute', 'exists', null), 'Attribute[Element[*][attribute]]'],
@@ -25,7 +25,7 @@ class AttributeNodeTest extends AbstractNodeTestCase
         ];
     }
 
-    public static function getSpecificityValueTestData()
+    public function getSpecificityValueTestData()
     {
         return [
             [new AttributeNode(new ElementNode(), null, 'attribute', 'exists', null), 10],

@@ -110,7 +110,7 @@ abstract class AbstractAsciiTestCase extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public static function wordwrapProvider()
+    public function wordwrapProvider()
     {
         return [
             [
