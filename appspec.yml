@@ -6,7 +6,16 @@ files:
     destination: /var/www/html/
 file_exists_behavior: OVERWRITE
 
-hooks:
-  AfterInstall:
-    - location: prep/after_install.sh
-    - runas: root
+permissions:
+  - object: /var/www/html
+    owner: apache
+    group: apache
+    mode: 2755
+    type:
+    - directory
+  - object: /var/www/html
+    owner: apache
+    group: apache
+    mode: 2644
+    type:
+    - file
