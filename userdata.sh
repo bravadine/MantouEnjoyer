@@ -14,7 +14,7 @@ mv composer.phar /usr/local/bin/composer
 
 # install php-zip extension (through pecl)
 dnf install -y php-devel php-pear libzip libzip-devel;
-pecl install zip;
+pecl install php-zip;
 echo "extension=zip.so" | tee /etc/php.d/20-zip.ini
 
 # start apache
@@ -23,13 +23,13 @@ systemctl start httpd --now;
 
 # Configure Let's Encrypt (certbot)...
 dnf install -y augeas;
-pip install certbot python-augeas certbot certbot-apache;
+pip install certbot python-augeas certbot-apache;
 certbot --noninteractive --agree-tos -m ygsmr.public@gmail.com --apache --domain mantouenjoyer.live;
 # ...and add a cron job
-crontab -l > tmp;
-echo "37 0,12 * * * root /usr/local/bin/certbot renew --quiet" >> tmp;
-crontab tmp;
-rm tmp;
+crontab -l > tmp.txt;
+echo "37 0,12 * * * root /usr/local/bin/certbot renew --quiet" >> tmp.txt;
+crontab tmp.txt;
+rm tmp.txt;
 
 # Setup & start CodeDeploy (to pull web code)
 cd /tmp;
