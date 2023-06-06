@@ -1,5 +1,6 @@
 userdata.sh
 example.env
 example.htaccess
-
+.sql
 AWSArch.xml
+.idea
