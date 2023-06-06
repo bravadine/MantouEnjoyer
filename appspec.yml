@@ -19,3 +19,8 @@ permissions:
     mode: 2644
     type:
     - file
+
+hooks:
+  AfterInstall:
+    - location: scripts/afterinstall.sh
+      timeout: 180
